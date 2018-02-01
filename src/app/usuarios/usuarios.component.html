@@ -4,43 +4,42 @@
   </a>
 </div>
 
+<h5>
+  Lista de Usuários
+</h5>
+
+<hr>
+
 <table class="bordered highlight">
   <thead>
     <tr>
       <th>Name</th>
-      <th>Item Name</th>
-      <th>Item Price</th>
-      <th>Ações</th>
+      <th>E-Mail</th>
+      <th>Tipo</th>
+      <th class="center-align">Ações</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr>
-      <td>Alvin</td>
-      <td>Eclair</td>
-      <td>$0.87</td>
+
+    <tr *ngFor="let usuario of usuarios">
+      <td>
+        {{usuario.nome}}
+      </td>
+
+      <td>
+        {{usuario.email}}
+      </td>
+
+      <td>
+        {{usuario.tipo}}
+      </td>
+
       <td class="right-align">
         <i class="material-icons">border_color</i> &nbsp; &nbsp;
         <i class="material-icons">highlight_off</i>
       </td>
     </tr>
-    <tr>
-      <td>Alan</td>
-      <td>Jellybean</td>
-      <td>$3.76</td>
-      <td class="right-align">
-        <i class="material-icons">border_color</i> &nbsp; &nbsp;
-        <i class="material-icons">highlight_off</i>
-      </td>
-    </tr>
-    <tr>
-      <td>Jonathan</td>
-      <td>Lollipop</td>
-      <td>$7.00</td>
-      <td class="right-align">
-        <i class="material-icons">border_color</i> &nbsp; &nbsp;
-        <i class="material-icons">highlight_off</i>
-      </td>
-    </tr>
+
   </tbody>
 </table>
