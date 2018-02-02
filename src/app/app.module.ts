@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { routing } from './app.routing';
 import { UsuariosService } from './usuarios/usuarios.service';
+import { ContatosService } from './contatos/contatos.service';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { UsuariosService } from './usuarios/usuarios.service';
     routing
   ],
   providers: [
-    UsuariosService
+    UsuariosService,
+    ContatosService
   ],
   bootstrap: [AppComponent]
 })

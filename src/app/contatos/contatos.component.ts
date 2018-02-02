@@ -1,3 +1,4 @@
+import { ContatosService } from './contatos.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContatosComponent implements OnInit {
 
-  constructor() { }
+  contatos: any = [];
+
+  constructor(private contatosService: ContatosService) { }
 
   ngOnInit() {
+    this.contatos = this.contatosService.getContatos();
   }
 
 }

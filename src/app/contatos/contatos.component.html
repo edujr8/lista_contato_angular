@@ -13,43 +13,38 @@
 <table class="bordered highlight">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Item Name</th>
-      <th>Item Price</th>
+      <th>Nome</th>
+      <th>E-Mail</th>
+      <th>Telefone</th>
+      <th>Data Nascimento</th>
       <th>Ações</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr>
-      <td>Alvin</td>
-      <td>Eclair</td>
-      <td>$0.87</td>
+
+    <tr *ngFor="let contato of contatos">
+      <td>
+        {{contato.nome}}
+      </td>
+
+      <td>
+        {{contato.email}}
+      </td>
+
+      <td>
+        {{contato.telefone}}
+      </td>
+
+      <td>
+        {{contato.data_nascimento}}
+      </td>
+
       <td class="right-align">
         <i class="material-icons">border_color</i> &nbsp; &nbsp;
         <i class="material-icons">highlight_off</i>
       </td>
     </tr>
 
-    <tr>
-      <td>Alan</td>
-      <td>Jellybean</td>
-      <td>$3.76</td>
-      <td class="right-align">
-        <i class="material-icons">border_color</i> &nbsp; &nbsp;
-        <i class="material-icons">highlight_off</i>
-      </td>
-    </tr>
-
-    <tr>
-      <td>Jonathan</td>
-      <td>Lollipop</td>
-      <td>$7.00</td>
-      <td class="right-align">
-        <i class="material-icons">border_color</i> &nbsp; &nbsp;
-        <i class="material-icons">highlight_off</i>
-      </td>
-    </tr>
-    
   </tbody>
 </table>
