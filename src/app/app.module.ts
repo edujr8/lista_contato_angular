@@ -1,36 +1,43 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { MaterializeModule } from 'angular2-materialize';
 
 import { AppComponent } from './app.component';
-import { UsuariosComponent } from './usuarios/usuarios.component';
-import { ContatosComponent } from './contatos/contatos.component';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { routing } from './app.routing';
-import { UsuariosService } from './usuarios/usuarios.service';
-import { ContatosService } from './contatos/contatos.service';
-
+import { AppRoutingModule } from './app.routing.module';
+import { LoginModule } from './login/login.module';
+import { RestrictedModule } from './restricted/restricted.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UsuariosComponent,
-    ContatosComponent,
-    LoginComponent,
-    HomeComponent    
+    AppComponent
   ],
+  
   imports: [
+
+    /* Módulos do Angular */
     BrowserModule,
+    RouterModule,
+
+    /* Módulos de Terceiros */
     MaterializeModule,
-    routing
+
+    /* Módulos de Rotas */
+    AppRoutingModule,
+
+    /* Módulos da Minha Aplicação */
+    LoginModule,
+    RestrictedModule
+
   ],
+
   providers: [
-    UsuariosService,
-    ContatosService
   ],
-  bootstrap: [AppComponent]
+
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

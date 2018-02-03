@@ -1,5 +1,5 @@
 <div class="fixed-action-btn">
-  <a class="btn-floating btn-large waves-effect waves-light red" href="">
+  <a routerLink='novo' class="btn-floating btn-large waves-effect waves-light red" href="">
     <i class="large material-icons">mode_edit</i>
   </a>
 </div>
@@ -41,7 +41,11 @@
       </td>
 
       <td class="right-align">
-        <i class="material-icons">border_color</i> &nbsp; &nbsp;
+
+        <a [routerLink]="['editar', contato.id]">
+          <i class="material-icons">border_color</i> &nbsp; &nbsp;
+        </a>
+
         <i class="material-icons">highlight_off</i>
       </td>
     </tr>
