@@ -1,21 +1,27 @@
 <div class="container">
 
-  <h6>Preencha seus dados de acesso !</h6>
+  <ul class="collection" [hidden]="!alertView">
+    <li class="collection-item active">Email ou Senha estão incorretos !</li>
+  </ul>
+
+  <h5>
+    Preencha seus dados de acesso !
+  </h5>
 
   <div class="row">
     <div class="input-field col s12">
-      <label for="inputEmail">Login</label>
-      <input type="text" name="login" id="login" required="" autofocus="">
+      <label for="inputEmail">email</label>
+      <input type="text" name="login" id="login" required="" autofocus="" [(ngModel)]="usuario.email" />
     </div>
 
     <div class="input-field col s12">
       <label for="inputPassword">Senha</label>
-      <input type="password" name="senha" id="senha" required="">
+      <input type="password" name="senha" id="senha" required="" [(ngModel)]="usuario.senha" />
     </div>
   </div>
 
   <div class="text-center">
-    <button class="waves-effect waves-light btn" type="submit">Acessar</button>
+    <button class="waves-effect waves-light btn" type="submit" (click)="realizarLogin()">Acessar</button>
 
     <a href="lembrar_senha.php" class="waves-effect waves-light btn">Esqueci a Senha</a>
   </div>
