@@ -4,12 +4,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { RestrictedComponent } from './restricted.component';
 import { AuthGuard } from './../guard/auth.guard';
+import { AuthChildrenGuard } from './../guard/auth.children';
 
 const restrictedRoutes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    canActivate: [
+      AuthGuard
+    ]
   },
   {
     path: 'home',
@@ -25,6 +29,9 @@ const restrictedRoutes: Routes = [
     loadChildren: './contatos/contatos.module#ContatosModule',
     canActivate: [
       AuthGuard
+    ],
+    canActivateChild: [
+      AuthChildrenGuard
     ]
   },
   {
@@ -33,6 +40,9 @@ const restrictedRoutes: Routes = [
     loadChildren: './usuarios/usuarios.module#UsuariosModule',
     canActivate: [
       AuthGuard
+    ],
+    canActivateChild: [
+      AuthChildrenGuard
     ]
   }
 ];

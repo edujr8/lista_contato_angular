@@ -7,22 +7,8 @@
 
     <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-      <li routerLinkActive="active">
-        <a routerLink="/contatos">
-          Contatos
-          <i class="material-icons left">contacts</i>
-        </a>
-      </li>
-
-      <li routerLinkActive="active">
-        <a routerLink="/usuarios">
-          Usuários
-          <i class="material-icons left">account_box</i>
-        </a>
-      </li>
-
       <li>
-        <a routerLink="/login">
+        <a (click)="logOut()">
           Sair
           <i class="material-icons left">exit_to_app</i>
         </a>
@@ -33,7 +19,19 @@
 </nav>
 
 <div class="container">
+  <div class="row">
+    <div class="col s3">
+      <div class="collection">
 
-  <router-outlet></router-outlet>
+        <a *ngFor="let item of usuario.modules" routerLink="{{item.link}}" routerLinkActive="active"  class="collection-item">
+            <i class="material-icons" style="vertical-align: -5px;">{{item.icon}}</i> {{item.nome}}
+        </a>
 
+      </div>
+    </div>
+
+    <div class="col s9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
