@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Contato } from '../../class/contato.class';
 
 @Injectable()
 export class ContatosService {
+
+  private contato: Contato;
 
   getContatos() {
     return [
@@ -10,7 +13,7 @@ export class ContatosService {
         nome: 'Teste Contato 1',
         email: 'contato1@email.com',
         telefone: '11988887777',
-        operadora: '1',
+        operadora: 'Vivo',
         cidade: 'São Paulo',
         estado: 'SP',
         data_nascimento: '1999-12-01'
@@ -20,7 +23,7 @@ export class ContatosService {
         nome: 'Teste Contato 2',
         email: 'contato2@email.com',
         telefone: '11977774444',
-        operadora: '2',
+        operadora: 'Tim',
         cidade: 'São Paulo',
         estado: 'SP',
         data_nascimento: '1944-02-09'
@@ -28,6 +31,19 @@ export class ContatosService {
     ]
   }
 
-  constructor() { }
+  getContato(id) {
+
+    let contatos = this.getContatos();
+
+    for(let i=0; i < contatos.length; i++) {
+
+      if(contatos[i]['id'] == id) {
+        this.contato  = contatos[i];
+      }
+
+    }
+
+    return this.contato;
+  }
 
 }

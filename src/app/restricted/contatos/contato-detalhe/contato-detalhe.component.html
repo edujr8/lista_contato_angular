@@ -1,3 +1,52 @@
-<p>
-  contato-detalhe works!
-</p>
+<h5>
+  {{headerTitle}}
+</h5>
+
+<hr>
+
+<div class="row">
+  <div class="input-field col s12">
+    <label for="nome" class="active">Nome</label>
+    <input id="nome" type="text" class="validate" [(ngModel)]='contato.nome' >
+  </div>
+
+  <div class="input-field col s12">
+    <label for="email" class="active">E-Mail</label>
+    <input id="email" type="text" class="validate" [(ngModel)]='contato.email'>
+  </div>
+
+  <div class="input-field col s12">
+    <label for="telefone" class="active">Telefone</label>
+    <input id="telefone" type="text" class="validate" [(ngModel)]='contato.telefone'>
+  </div>
+
+  <div class="input-field col s12">
+      <label for="operadora" class="active">Operador</label>
+      <input id="operadora" type="text" class="validate" [(ngModel)]='contato.operadora'>
+    </div>
+
+  <div class="input-field col s12">
+    <label for="data_nascimento" class="active">Data Nascimento</label>
+    <input id="data_nascimento" type="text" class="validate" [(ngModel)]='contato.data_nascimento'>
+  </div>
+
+  <div class="input-field col s12">
+    <label for="cidade" class="active">Cidade</label>
+    <input id="cidade" type="text" class="validate" [(ngModel)]='contato.cidade'>
+  </div>
+
+  <div class="input-field col s12">
+    <label for="estado" class="active">Estado</label>
+    <input id="estado" type="text" class="validate" [(ngModel)]='contato.estado'>
+  </div>
+</div>
+
+<div class="fixed-action-btn horizontal">
+  <a class="btn-floating btn-large waves-effect waves-light green">
+    <i class="material-icons">save</i>
+  </a>
+
+  <a class="btn-floating btn-large waves-effect waves-light grey" routerLink="/contatos">
+    <i class="material-icons">keyboard_return</i>
+  </a>
+</div>

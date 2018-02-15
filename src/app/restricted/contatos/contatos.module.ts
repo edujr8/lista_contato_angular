@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 /* Rotas */
 import { ContatosRoutingModule } from './contatos.routing.module';
@@ -14,7 +15,8 @@ import { ContatoDetalheComponent } from './contato-detalhe/contato-detalhe.compo
 @NgModule({
   imports: [
     CommonModule,
-    ContatosRoutingModule
+    ContatosRoutingModule,
+    FormsModule
   ],
   declarations: [
     ContatosComponent,
